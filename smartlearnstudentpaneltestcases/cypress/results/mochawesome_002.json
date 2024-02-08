@@ -1,0 +1,298 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 1,
+    "pending": 0,
+    "failures": 8,
+    "start": "2024-02-08T10:54:35.512Z",
+    "end": "2024-02-08T10:54:50.611Z",
+    "duration": 15099,
+    "testsRegistered": 9,
+    "passPercent": 11.11111111111111,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "519d9d38-ae27-4ad6-857f-6948cb15dcb6",
+      "title": "",
+      "fullFile": "cypress/e2e/StudentProfileTest.cy.ts",
+      "file": "cypress/e2e/StudentProfileTest.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+          "title": "Login Component",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test1:-should display error for blank email and password",
+              "fullTitle": "Login Component Test1:-should display error for blank email and password",
+              "timedOut": null,
+              "duration": 5743,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get(\"button[type='submit']\").type('Log In').click({ force: true });\ncy.get('[name=\"email\"]').should('have.value', '');\ncy.contains('Email is required').type(\"eq\", \"Email is required\");\ncy.get('[name=\"password\"]').should('have.value', '');\ncy.contains('Password is required').type(\"eq\", \"Password is required\");",
+              "err": {},
+              "uuid": "d9258175-1659-44c2-9c54-d268143119e5",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test2:-should display error for blank email",
+              "fullTitle": "Login Component Test2:-should display error for blank email",
+              "timedOut": null,
+              "duration": 852,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"password\"]').type(jsonObject.password);\ncy.get('[name=\"email\"]').click();\ncy.get('[name=\"password\"]').click();\ncy.contains('Email is required').type(\"eq\", \"Email is required\");",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:18:37)",
+                "diff": null
+              },
+              "uuid": "598d7253-c80f-4767-a7c0-29314ef4714c",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test3:-should display error for blank password",
+              "fullTitle": "Login Component Test3:-should display error for blank password",
+              "timedOut": null,
+              "duration": 765,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"email\"]').type(jsonObject.emailid);\ncy.get('[name=\"password\"]').click();\ncy.get('[name=\"email\"]').click();\ncy.contains('Password is required').type(\"eq\", \"Password is required\");",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:26:34)",
+                "diff": null
+              },
+              "uuid": "d43bba88-d59a-4226-99ef-69b957751832",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test4:-should validatation display password requirements like a (Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter)",
+              "fullTitle": "Login Component Test4:-should validatation display password requirements like a (Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter)",
+              "timedOut": null,
+              "duration": 798,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"password\"]').type(jsonObject.dpassword);\ncy.get('[name=\"email\"]').click();\ncy.contains('Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter')\n    .type(\"eq\", \"Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter\");\nexpect(jsonObject.dpassword.length).to.be.at.least(8);",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:34:37)",
+                "diff": null
+              },
+              "uuid": "ab35ec3c-d4e8-47e4-8e8d-40780ad995ac",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test5:-should validate password requirements like a (Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter)",
+              "fullTitle": "Login Component Test5:-should validate password requirements like a (Password must include at least 8 characters, one special character, one digit, one uppercase and one lowercase letter)",
+              "timedOut": null,
+              "duration": 2119,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"password\"]').type(jsonObject.password);\ncy.get('[name=\"email\"]').click();\nexpect(jsonObject.password.length).to.be.at.least(8);\nexpect(/[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+/.test(jsonObject.password)).to.be.true;\nexpect(/\\d+/.test(jsonObject.password)).to.be.true;\nexpect(/[A-Z]+/.test(jsonObject.password)).to.be.true;\nexpect(/[a-z]+/.test(jsonObject.password)).to.be.true;",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:45:37)",
+                "diff": null
+              },
+              "uuid": "dd2cbf09-201d-4bcc-a9b5-1bc8c079910e",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test6:-should validate email format",
+              "fullTitle": "Login Component Test6:-should validate email format",
+              "timedOut": null,
+              "duration": 796,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"email\"]').type(jsonObject.emailid);\ncy.get('[name=\"password\"]').click();\n// Check if email format is valid using a regular expression\nexpect(/\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b/.test(jsonObject.emailid)).to.be.true;",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:61:34)",
+                "diff": null
+              },
+              "uuid": "10280c7d-231a-47fd-a5ec-3d2eaf1c00a8",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test7:-should validation display when enter invalid email format",
+              "fullTitle": "Login Component Test7:-should validation display when enter invalid email format",
+              "timedOut": null,
+              "duration": 833,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"email\"]').type(jsonObject.demailid);\ncy.get('[name=\"password\"]').click();\ncy.contains('Please enter a valid email address').type(\"eq\", \"Please enter a valid email address\");\n// Check if email format is valid using a regular expression\n//expect(/\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b/.test(emailid)).to.be.true;",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:70:34)",
+                "diff": null
+              },
+              "uuid": "a2962679-5379-4994-aecc-672fa290ee3f",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test8:-should enter invalid login credentials",
+              "fullTitle": "Login Component Test8:-should enter invalid login credentials",
+              "timedOut": null,
+              "duration": 805,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"email\"]').type(jsonObject.emailid);\ncy.get('[name=\"password\"]').type(jsonObject.ipassword);\ncy.get(\"button[type='submit']\").type('Please wait...').click({ force: true });\nvar expectedMessage = 'Email or password not matched';\ncy.get('[role=\"status\"]').contains(expectedMessage);",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:79:34)",
+                "diff": null
+              },
+              "uuid": "d6cecc8a-0bc1-4b3e-9e1e-98f01a3322dc",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test9:-should enter valid login credentials",
+              "fullTitle": "Login Component Test9:-should enter valid login credentials",
+              "timedOut": null,
+              "duration": 831,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').contains('Login').click();\ncy.get('[name=\"email\"]').type(jsonObject.emailid);\ncy.get('[name=\"password\"]').type(jsonObject.password);\ncy.get(\"button[type='submit']\").type('Log In').click({ force: true });\nvar expectedMessage = 'Student LoggedIn successFully';\ncy.get('[role=\"status\"]').contains(expectedMessage);",
+              "err": {
+                "message": "ReferenceError: jsonObject is not defined",
+                "estack": "ReferenceError: jsonObject is not defined\n    at Context.eval (webpack://smartlearnstudentpaneltestcases/./cypress/e2e/StudentProfileTest.cy.ts:88:34)",
+                "diff": null
+              },
+              "uuid": "443ad8b0-4da8-46b5-a6f6-c311a93dbe60",
+              "parentUUID": "734c59c0-a83f-4d79-a939-781ed4cef66d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d9258175-1659-44c2-9c54-d268143119e5"
+          ],
+          "failures": [
+            "598d7253-c80f-4767-a7c0-29314ef4714c",
+            "d43bba88-d59a-4226-99ef-69b957751832",
+            "ab35ec3c-d4e8-47e4-8e8d-40780ad995ac",
+            "dd2cbf09-201d-4bcc-a9b5-1bc8c079910e",
+            "10280c7d-231a-47fd-a5ec-3d2eaf1c00a8",
+            "a2962679-5379-4994-aecc-672fa290ee3f",
+            "d6cecc8a-0bc1-4b3e-9e1e-98f01a3322dc",
+            "443ad8b0-4da8-46b5-a6f6-c311a93dbe60"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13542,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "showPassed": true,
+        "showFailed": true,
+        "showSkipped": true,
+        "saveHtml": true,
+        "chart": true,
+        "enabledCode": false,
+        "screenshotOnRunFailure": true,
+        "enableCode": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}
